@@ -6,6 +6,7 @@ license = "GPL"
 exclude = [
     ".idea/*",
 ]
+description = "Utility crate for raising file descriptors limit for OSX and Linux"
 
 [dependencies]
 libc = "0.2"
