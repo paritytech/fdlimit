@@ -1,12 +1,13 @@
 [package]
 name = "fdlimit"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["NikVolf <nikvolf@gmail.com>"]
 license = "GPL-3.0"
 exclude = [
     ".idea/*",
 ]
 description = "Utility crate for raising file descriptors limit for OSX and Linux"
+repository = "https://github.com/ethcore/fdlimit"
 
 [dependencies]
 libc = "0.2"
