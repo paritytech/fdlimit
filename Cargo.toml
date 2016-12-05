@@ -2,7 +2,7 @@
 name = "fdlimit"
 version = "0.1.0"
 authors = ["NikVolf <nikvolf@gmail.com>"]
-license = "GPL"
+license = "GPL-3.0"
 exclude = [
     ".idea/*",
 ]
