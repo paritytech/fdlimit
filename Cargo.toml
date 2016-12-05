@@ -1,0 +1,11 @@
+[package]
+name = "fdlimit"
+version = "0.1.0"
+authors = ["NikVolf <nikvolf@gmail.com>"]
+license = "GPL"
+exclude = [
+    ".idea/*",
+]
+
+[dependencies]
+libc = "0.2"
