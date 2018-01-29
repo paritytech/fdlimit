@@ -5,7 +5,7 @@ Applicable for OSX and Linux
 
 on Windows does nothing
 
-# Dependency
+## Dependency
 
 add in Cargo.toml: 
 ```
