@@ -1,7 +1,7 @@
 [package]
 name = "fdlimit"
 version = "0.1.1"
-authors = ["NikVolf <nikvolf@gmail.com>"]
+authors = ["Parity Technologies<admin@parity.io>"]
 license = "GPL-3.0"
 exclude = [
     ".idea/*",
