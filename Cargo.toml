@@ -3,11 +3,8 @@ name = "fdlimit"
 version = "0.1.2"
 authors = ["Parity Technologies<admin@parity.io>"]
 license = "GPL-3.0"
-exclude = [
-    ".idea/*",
-]
 description = "Utility crate for raising file descriptors limit for OSX and Linux"
-repository = "https://github.com/ethcore/fdlimit"
+repository = "https://github.com/paritytech/fdlimit"
 
 [dependencies]
 libc = "0.2"
