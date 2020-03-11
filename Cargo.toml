@@ -2,7 +2,7 @@
 name = "fdlimit"
 version = "0.1.2"
 authors = ["Parity Technologies<admin@parity.io>"]
-license = "GPL-3.0"
+license = "Apache-2.0"
 description = "Utility crate for raising file descriptors limit for OSX and Linux"
 repository = "https://github.com/paritytech/fdlimit"
 
