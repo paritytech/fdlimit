@@ -14,13 +14,23 @@
 
 extern crate libc;
 
+/// Raise the soft open file descriptor resource limit to the smaller of the
+/// kernel limit and the hard resource limit.
+///
+/// Returns [`Some`] with the new limit.
+///
+/// # Panics
+///
+/// Panics if [`libc::sysctl`], [`libc::getrlimit`] or [`libc::setrlimit`]
+/// fail.
+///
 /// darwin_fd_limit exists to work around an issue where launchctl on Mac OS X
 /// defaults the rlimit maxfiles to 256/unlimited. The default soft limit of 256
 /// ends up being far too low for our multithreaded scheduler testing, depending
 /// on the number of cores available.
 #[cfg(any(target_os = "macos", target_os = "ios"))]
 #[allow(non_camel_case_types)]
-pub fn raise_fd_limit() {
+pub fn raise_fd_limit() -> Option<u64> {
 	use std::cmp;
 	use std::io;
 	use std::mem::size_of_val;
@@ -60,13 +70,22 @@ pub fn raise_fd_limit() {
 			let err = io::Error::last_os_error();
 			panic!("raise_fd_limit: error calling setrlimit: {}", err);
 		}
+
+		Some(rlim.rlim_cur)
 	}
 }
 
+/// Raise the soft open file descriptor resource limit to the hard resource
+/// limit.
+///
+/// Returns [`Some`] with the new limit.
+///
+/// # Panics
+///
+/// Panics if [`libc::getrlimit`] or [`libc::setrlimit`] fail.
 #[cfg(any(target_os = "linux"))]
 #[allow(non_camel_case_types)]
-pub fn raise_fd_limit() {
-	use libc;
+pub fn raise_fd_limit() -> Option<u64> {
 	use std::io;
 
 	unsafe {
@@ -85,8 +104,13 @@ pub fn raise_fd_limit() {
 			let err = io::Error::last_os_error();
 			panic!("raise_fd_limit: error calling setrlimit: {}", err);
 		}
+
+		Some(rlim.rlim_cur)
 	}
 }
 
+/// Returns [`None`].
 #[cfg(not(any(target_os = "macos", target_os = "ios", target_os = "linux")))]
-pub fn raise_fd_limit() {}
+pub fn raise_fd_limit() -> Option<u64> {
+	None
+}

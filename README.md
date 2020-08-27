@@ -12,5 +12,5 @@ on Windows does nothing
 add in Cargo.toml: 
 ```
 [dependencies]
-fdlimit = "0.1.1"
+fdlimit = "0.2.0"
 ```
