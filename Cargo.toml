@@ -1,6 +1,6 @@
 [package]
 name = "fdlimit"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Parity Technologies<admin@parity.io>"]
 license = "Apache-2.0"
 description = "Utility crate for raising file descriptors limit for OSX and Linux"
