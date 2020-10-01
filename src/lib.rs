@@ -105,7 +105,7 @@ pub fn raise_fd_limit() -> Option<u64> {
 			panic!("raise_fd_limit: error calling setrlimit: {}", err);
 		}
 
-		Some(rlim.rlim_cur)
+		Some(rlim.rlim_cur.into())
 	}
 }
 
