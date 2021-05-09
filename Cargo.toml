@@ -3,8 +3,13 @@ name = "fdlimit"
 version = "0.2.1"
 authors = ["Parity Technologies<admin@parity.io>"]
 license = "Apache-2.0"
+edition = "2018"
 description = "Utility crate for raising file descriptors limit for OSX and Linux"
 repository = "https://github.com/paritytech/fdlimit"
 
 [dependencies]
 libc = "0.2"
+thiserror = "1.0.24"
+
+[dev-dependencies]
+matches = "0.1.8"
