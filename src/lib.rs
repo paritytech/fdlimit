@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-extern crate libc;
-
 /// Outcome of raising file descriptor resource limit
 pub enum Outcome {
 	/// Limit was raised successfully
