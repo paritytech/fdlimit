@@ -12,7 +12,7 @@ on Windows does nothing
 add in Cargo.toml: 
 ```
 [dependencies]
-fdlimit = "0.2.1"
+fdlimit = "0.3.0"
 ```
 
 # License
