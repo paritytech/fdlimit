@@ -9,4 +9,4 @@ repository = "https://github.com/paritytech/fdlimit"
 
 [dependencies]
 libc = "0.2"
-thiserror = "1.0.50"
+thiserror = "1.0"
